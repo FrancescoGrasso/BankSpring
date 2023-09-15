@@ -3,7 +3,10 @@ package org.generation.bank.model;
 import org.generation.bank.model.services.abstractions.AccountService;
 import org.generation.bank.repositories.abstractions.AccountRepository;
 import org.generation.bank.repositories.implementations.AccountServiceImp;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("bank")
 public class Bank {
 
     private AccountService accountService;
@@ -13,6 +16,7 @@ public class Bank {
     //constructor injection
     // (iniettare la dipendenza nel costruttore -
     //  parametro di tipo Interfaccia cosi per polimorfismo posso passare qualsiasi implementazione)
+    @Autowired
     public Bank(AccountService service) {
         this.accountService = service;
     }// prima: repository = new InMemoryAccountRepository;

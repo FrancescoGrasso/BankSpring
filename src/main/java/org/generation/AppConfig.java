@@ -12,17 +12,17 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan({"org.generation"})
 public class AppConfig {
-    @Bean(name = "accountService")
-    public AccountService getAccountService(){
-        AccountService a = new AccountServiceImp(getAccountRepository());
-        return a;
-    }
-    @Bean(name = "accountRepository")
-    public AccountRepository getAccountRepository(){
-        return new InMemoryAccountRepository();
-    }
-    @Bean(name = "bank")
-    public Bank getBank(){
-        return new Bank(getAccountService());
-    }
+//    @Bean(name = "accountService")
+//    public AccountService getAccountService(){
+//        AccountService a = new AccountServiceImp(getAccountRepository());
+//        return a;
+//    }
+//    @Bean(name = "accountRepository")
+//    public AccountRepository getAccountRepository(){
+//        return new InMemoryAccountRepository();
+//    }
+//    @Bean(name = "bank")
+//    public Bank getBank(){
+//        return new Bank(getAccountService());
+//    }
 }
