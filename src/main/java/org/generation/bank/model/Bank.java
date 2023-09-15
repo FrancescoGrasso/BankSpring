@@ -1,16 +1,20 @@
-package org.generation.bank;
+package org.generation.bank.model;
+
+import org.generation.bank.model.services.abstractions.AccountService;
+import org.generation.bank.repositories.abstractions.AccountRepository;
+import org.generation.bank.repositories.implementations.AccountServiceImp;
 
 public class Bank {
 
-    private AccountRepository repository;
+    private AccountService accountService;
 
     // dependecy injection
 
     //constructor injection
     // (iniettare la dipendenza nel costruttore -
     //  parametro di tipo Interfaccia cosi per polimorfismo posso passare qualsiasi implementazione)
-    public Bank(AccountRepository repo) {
-        this.repository = repo;
+    public Bank(AccountService service) {
+        this.accountService = service;
     }// prima: repository = new InMemoryAccountRepository;
 
     /*
@@ -26,7 +30,7 @@ public class Bank {
     }*/
 
     public void addAccount(Account account) {
-        repository.addAccount(account);
+        accountService.save(account);
     }
 
     public void handleAccounts(Account firstAccount, Account secondAccount) throws InsufficentBalanceException {
@@ -41,7 +45,7 @@ public class Bank {
     public void printAccountBalances() {
         System.out.println("Il bilancio degli account nella banca sono: ");
 
-        for (Account account : repository.getAccounts()) {
+        for (Account account : accountService.getAllAccounts()) {
             System.out.println(account.getBalance());
         }
     }

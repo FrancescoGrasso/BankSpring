@@ -1,4 +1,4 @@
-package org.generation.bank;
+package org.generation.bank.model;
 
 public abstract class Account {
     private double balance;

@@ -1,4 +1,6 @@
-package org.generation.bank;
+package org.generation.bank.repositories.abstractions;
+
+import org.generation.bank.model.Account;
 
 public interface AccountRepository{
 

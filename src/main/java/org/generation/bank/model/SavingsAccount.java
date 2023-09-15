@@ -1,6 +1,8 @@
-package org.generation.bank;
+package org.generation.bank.model;
 
-public class SavingsAccount extends Account{
+import org.generation.bank.model.Account;
+
+public class SavingsAccount extends Account {
     public SavingsAccount(double amount) {
         super(amount);
     }

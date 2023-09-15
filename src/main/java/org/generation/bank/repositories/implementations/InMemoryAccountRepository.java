@@ -1,8 +1,13 @@
-package org.generation.bank;
+package org.generation.bank.repositories.implementations;
+
+import org.generation.bank.model.Account;
+import org.generation.bank.repositories.abstractions.AccountRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository("accountRepository")
 public class InMemoryAccountRepository implements AccountRepository {
     /*
         Un wrapper intorno all'HahsMap dove sono di fatto i conti correnti

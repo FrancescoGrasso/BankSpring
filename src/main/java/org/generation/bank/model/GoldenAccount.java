@@ -1,4 +1,4 @@
-package org.generation.bank;
+package org.generation.bank.model;
 
 import java.util.Calendar;
 import java.util.Date;

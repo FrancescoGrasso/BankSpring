@@ -1,15 +1,29 @@
-package org.generation.exercises.bank_account_prof;
+package org.generation.bank;
+
+import org.generation.AppConfig;
+import org.generation.bank.model.*;
+import org.generation.bank.model.services.abstractions.AccountService;
+import org.generation.bank.repositories.abstractions.AccountRepository;
+import org.generation.bank.repositories.implementations.AccountServiceImp;
+import org.generation.bank.repositories.implementations.InMemoryAccountRepository;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Index {
     public static void main(String[] args) {
+        ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
         // Creazione di due account
         Account account1 = new SavingsAccount(1000); // Esempio di un account di risparmio
         Account account2 = new CheckingAccount(500); // Esempio di un account corrente
         Account account3 = new GoldenAccount(3000); // Esempio di account Gold
         Account account4 = new CaymanAccount(5000, "segreto123");
 
-        AccountRepository ac = new InMemoryAccountRepository();
-        Bank bank = new Bank(ac);
+        //AccountRepository ac = new InMemoryAccountRepository();
+        //AccountService as = new AccountServiceImp(ac);
+        //Bank bank = new Bank(as);
+
+        Bank bank = appContext.getBean("bank", Bank.class);
 
         bank.addAccount(account1);
         bank.addAccount(account2);

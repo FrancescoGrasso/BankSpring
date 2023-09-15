@@ -1,4 +1,4 @@
-package org.generation.bank;
+package org.generation.bank.model;
 
 public class CheckingAccount extends Account{
     public CheckingAccount(double amount) {
