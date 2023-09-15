@@ -4,9 +4,12 @@ import org.generation.bank.model.services.abstractions.AccountService;
 import org.generation.bank.repositories.abstractions.AccountRepository;
 import org.generation.bank.repositories.implementations.AccountServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("bank")
+//@Scope(value = BeanDefinition.SCOPE_PROTOTYPE)
 public class Bank {
 
     private AccountService accountService;

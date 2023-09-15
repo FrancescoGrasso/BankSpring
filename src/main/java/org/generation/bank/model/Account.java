@@ -27,6 +27,8 @@ public abstract class Account {
         if (amount > balance) {
             throw new InsufficentBalanceException("Non può prelevare più di quanto v'è nel conto", amount, balance);
         }
+        balance -= amount;
+
     }
 
     public abstract void deposit(double amount);

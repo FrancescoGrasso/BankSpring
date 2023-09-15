@@ -25,6 +25,12 @@ public class Index {
 
         Bank bank = appContext.getBean("bank", Bank.class);
 
+        System.out.println(bank);
+
+        Bank bank2 = appContext.getBean("bank", Bank.class);
+
+        System.out.println(bank2);
+
         bank.addAccount(account1);
         bank.addAccount(account2);
 
